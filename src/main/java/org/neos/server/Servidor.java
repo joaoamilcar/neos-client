@@ -1,6 +1,7 @@
 package org.neos.server;
 
 public class Servidor {
+	
 	private String host, porta;
 	
 	public Servidor(String host, String porta) {

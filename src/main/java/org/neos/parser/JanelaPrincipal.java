@@ -332,10 +332,10 @@ public class JanelaPrincipal extends JFrame {
 			public void actionPerformed(ActionEvent e) {  
         		String titulo = "About NEOS Client",
         				textoPadrao = "Released on August 26th, 2017.",
-        				versaoMxGraph = "   - mxGraph version \"2.5.1.1\".",
+        				versaoJgraphx = "   - jgraphx version \"3.4.1.3\".",
         				versaoNeos = "   - neos version 5 (Madison).";
         				
-        		JOptionPane.showMessageDialog(null, textoPadrao + "\n" + versaoMxGraph + "\n" + versaoNeos, titulo, JOptionPane.PLAIN_MESSAGE);
+        		JOptionPane.showMessageDialog(null, textoPadrao + "\n" + versaoJgraphx + "\n" + versaoNeos, titulo, JOptionPane.PLAIN_MESSAGE);
             }  
         });
         

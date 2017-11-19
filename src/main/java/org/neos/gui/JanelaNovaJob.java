@@ -9,6 +9,7 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map.Entry;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -35,6 +36,7 @@ public class JanelaNovaJob extends JFrame {
 	private MutableComboBoxModel[] models;
 	private Cliente cliente;
 	private JTabbedPane abasPanel;
+	private HashMap<?, ?> categorias;
 	
 	public JanelaNovaJob(Cliente cliente, JTabbedPane abasPanel) throws XmlRpcException {
 		this.cliente = cliente;
@@ -59,7 +61,8 @@ public class JanelaNovaJob extends JFrame {
 			gridPanel1.add(comboBoxes[count]);
 		}
 		
-		HashMap categorias = cliente.listCategories();
+		categorias = cliente.listCategories();
+		
 		Iterator iteradorValoresCategorias = categorias.values().iterator();
 
 		while (iteradorValoresCategorias.hasNext()) {
@@ -132,12 +135,19 @@ public class JanelaNovaJob extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == botaoOK) {
 				String categoryFullName = comboBoxes[0].getSelectedItem().toString();
+				String categoryAbbreviatedName = "";
 				String[] setupComboBox1 = comboBoxes[1].getSelectedItem().toString().split(":");
 				String solver = setupComboBox1[0];
 				String inputMethod = setupComboBox1[1];
 				
+				for (Entry<?, ?> string : categorias.entrySet()) {
+					if(string.getValue().equals(categoryFullName))
+						categoryAbbreviatedName = (String) string.getKey();
+				}
+				
 				try {
-					String solverTemplate = cliente.getSolverTemplate(categoryFullName, solver, inputMethod);
+					String solverTemplate = cliente.getSolverTemplate(categoryAbbreviatedName, solver, inputMethod);
+					
 					AnalisadorTemplateXML analisador = new AnalisadorTemplateXML();
 					analisador.parse(solverTemplate);
 					

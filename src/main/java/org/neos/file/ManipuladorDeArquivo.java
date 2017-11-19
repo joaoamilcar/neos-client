@@ -48,7 +48,6 @@ public class ManipuladorDeArquivo {
 		
 		do {
 			algoritmo = scanner.nextLine(); // salta tag algoritmo
-			System.out.println(algoritmo);
 		} while(
 				!algoritmo.equals("#pMMDAC")
 				&& !algoritmo.equals("#min-max")
@@ -95,7 +94,6 @@ public class ManipuladorDeArquivo {
 		
 		do {
 			algoritmo = scanner.nextLine();
-			System.out.println(algoritmo);
 		} while(
 				!algoritmo.equals("#pMMDAC")
 				&& !algoritmo.equals("#min-max")
@@ -107,8 +105,6 @@ public class ManipuladorDeArquivo {
 				&& !algoritmo.equals("#raw")
 				&& scanner.hasNext()
 		);
-		
-		System.out.println(algoritmo);
 		
 		dataset.setAlgoritmo(algoritmo);
 		int contadorIdPonto = 0;

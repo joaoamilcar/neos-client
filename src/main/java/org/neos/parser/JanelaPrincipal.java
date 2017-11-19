@@ -149,7 +149,7 @@ public class JanelaPrincipal extends JFrame {
 				//File arquivo = fileChooser.getSelectedFile();
             	
             	int selIndex = abasPanel.getSelectedIndex();
-            	System.out.println(selIndex);
+            	//System.out.println(selIndex);
 				//ManipuladorDeArquivo.salvarConteudoParaArquivo(abasPanel, indiceAba);
             }  
         });

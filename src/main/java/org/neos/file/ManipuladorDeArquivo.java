@@ -43,7 +43,23 @@ public class ManipuladorDeArquivo {
 
 		Scanner scanner = new Scanner(arquivo);
 		scanner.useLocale(Locale.US); // interpreta a parte decimal a partir do ponto, não vírgula.
-		scanner.nextLine(); // algoritmo
+		
+		String algoritmo = "";
+		
+		do {
+			algoritmo = scanner.nextLine(); // salta tag algoritmo
+			System.out.println(algoritmo);
+		} while(
+				!algoritmo.equals("#pMMDAC")
+				&& !algoritmo.equals("#min-max")
+				&& !algoritmo.equals("#pACHCG")
+				&& !algoritmo.equals("#CCCP")
+				&& !algoritmo.equals("#centroid")
+				&& !algoritmo.equals("#pgpMC")
+				&& !algoritmo.equals("#p-median")
+				&& !algoritmo.equals("#raw")
+				&& scanner.hasNext()
+		);
 
 		while (scanner.hasNext()) {
 			scanner.nextDouble();
@@ -74,7 +90,26 @@ public class ManipuladorDeArquivo {
 
 		Scanner scanner = new Scanner(arquivo);
 		scanner.useLocale(Locale.US); // interpreta a parte decimal a partir de um ponto, não vírgula.
-		String algoritmo = scanner.nextLine();
+		
+		String algoritmo = "";
+		
+		do {
+			algoritmo = scanner.nextLine();
+			System.out.println(algoritmo);
+		} while(
+				!algoritmo.equals("#pMMDAC")
+				&& !algoritmo.equals("#min-max")
+				&& !algoritmo.equals("#pACHCG")
+				&& !algoritmo.equals("#CCCP")
+				&& !algoritmo.equals("#centroid")
+				&& !algoritmo.equals("#pgpMC")
+				&& !algoritmo.equals("#p-median")
+				&& !algoritmo.equals("#raw")
+				&& scanner.hasNext()
+		);
+		
+		System.out.println(algoritmo);
+		
 		dataset.setAlgoritmo(algoritmo);
 		int contadorIdPonto = 0;
 

@@ -27,6 +27,7 @@ import org.neos.cluster.view.VisualizadorDeCluster;
 import org.neos.cluster.view.VisualizadorDeClusterCentroid;
 import org.neos.cluster.view.VisualizadorDeClusterMinMax;
 import org.neos.cluster.view.VisualizadorDeClusterPMedian;
+import org.neos.cluster.view.VisualizadorDeClusterPadrao;
 import org.neos.file.ManipuladorDeArquivo;
 import org.neos.gui.JanelaAjuda;
 import org.neos.gui.JanelaCluster;
@@ -268,12 +269,15 @@ public class JanelaPrincipal extends JFrame {
 					String nomeArquivo = manipuladorArquivo.recuperarNomeDoArquivoSemExtensao(arquivo);
 					
 					switch (dataset.getAlgoritmo()) {
+					case "#pMMDAC":
 					case "#min-max":
 						VisualizadorDeCluster visualizador1 = new VisualizadorDeClusterMinMax(dataset);
 						visualizador1.templateVisualizarCluster();
 						new JanelaCluster(visualizador1.getGrafo(), visualizador1.getTabela(), nomeArquivo);
 						
 						break;
+					case "#pACHCG":
+					case "#CCCP":
 					case "#centroid":
 						ManipuladorDeCluster manipulador2 = new ManipuladorDeClusterCentroid(dataset);
 						manipulador2.templateMapearCluster();
@@ -282,12 +286,25 @@ public class JanelaPrincipal extends JFrame {
 						new JanelaCluster(visualizador2.getGrafo(), visualizador2.getTabela(), nomeArquivo);
 						
 						break;
+					case "#pgpMC":
 					case "#p-median":
 						ManipuladorDeCluster manipulador3 = new ManipuladorDeClusterPMedian(dataset);
 						manipulador3.templateMapearCluster();
 						VisualizadorDeCluster visualizador3 = new VisualizadorDeClusterPMedian(dataset);
 						visualizador3.templateVisualizarCluster();
 						new JanelaCluster(visualizador3.getGrafo(), visualizador3.getTabela(), nomeArquivo);
+						
+						break;
+					case "#raw":
+						VisualizadorDeCluster visualizador4 = new VisualizadorDeClusterPadrao(dataset);
+						visualizador4.templateVisualizarCluster();
+						new JanelaCluster(visualizador4.getGrafo(), visualizador4.getTabela(), nomeArquivo);
+						
+						break;
+					default:
+						VisualizadorDeCluster visualizador5 = new VisualizadorDeClusterPadrao(dataset);
+						visualizador5.templateVisualizarCluster();
+						new JanelaCluster(visualizador5.getGrafo(), visualizador5.getTabela(), nomeArquivo);
 						
 						break;
 					}
@@ -331,7 +348,7 @@ public class JanelaPrincipal extends JFrame {
         sobreAcao.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {  
         		String titulo = "About NEOS Client",
-        				textoPadrao = "Released on August 26th, 2017.",
+        				textoPadrao = "Released on November 18th, 2017.",
         				versaoJgraphx = "   - jgraphx version \"3.4.1.3\".",
         				versaoNeos = "   - neos version 5 (Madison).";
         				

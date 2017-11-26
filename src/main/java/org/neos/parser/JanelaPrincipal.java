@@ -148,7 +148,7 @@ public class JanelaPrincipal extends JFrame {
 				//fileChooser.showSaveDialog(salvarAcao);
 				//File arquivo = fileChooser.getSelectedFile();
             	
-            	int selIndex = abasPanel.getSelectedIndex();
+            	//int selIndex = abasPanel.getSelectedIndex();
             	//System.out.println(selIndex);
 				//ManipuladorDeArquivo.salvarConteudoParaArquivo(abasPanel, indiceAba);
             }  
@@ -271,6 +271,8 @@ public class JanelaPrincipal extends JFrame {
 					switch (dataset.getAlgoritmo()) {
 					case "#pMMDAC":
 					case "#min-max":
+					case "PACH_SMD":
+					case "pACH_SMD":
 						VisualizadorDeCluster visualizador1 = new VisualizadorDeClusterMinMax(dataset);
 						visualizador1.templateVisualizarCluster();
 						new JanelaCluster(visualizador1.getGrafo(), visualizador1.getTabela(), nomeArquivo);

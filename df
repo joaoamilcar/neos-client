@@ -1,0 +1,22 @@
+[1mdiff --git a/src/main/java/org/neos/parser/JanelaPrincipal.java b/src/main/java/org/neos/parser/JanelaPrincipal.java[m
+[1mindex aab68f3..9090f51 100644[m
+[1m--- a/src/main/java/org/neos/parser/JanelaPrincipal.java[m
+[1m+++ b/src/main/java/org/neos/parser/JanelaPrincipal.java[m
+[36m@@ -148,7 +148,7 @@[m [mpublic class JanelaPrincipal extends JFrame {[m
+ 				//fileChooser.showSaveDialog(salvarAcao);[m
+ 				//File arquivo = fileChooser.getSelectedFile();[m
+             	[m
+[31m-            	int selIndex = abasPanel.getSelectedIndex();[m
+[32m+[m[41m            [m	[32m//int selIndex = abasPanel.getSelectedIndex();[m[41m[m
+             	//System.out.println(selIndex);[m
+ 				//ManipuladorDeArquivo.salvarConteudoParaArquivo(abasPanel, indiceAba);[m
+             }  [m
+[36m@@ -271,6 +271,8 @@[m [mpublic class JanelaPrincipal extends JFrame {[m
+ 					switch (dataset.getAlgoritmo()) {[m
+ 					case "#pMMDAC":[m
+ 					case "#min-max":[m
+[32m+[m					[32mcase "PACH_SMD":[m[41m[m
+[32m+[m					[32mcase "pACH_SMD":[m[41m[m
+ 						VisualizadorDeCluster visualizador1 = new VisualizadorDeClusterMinMax(dataset);[m
+ 						visualizador1.templateVisualizarCluster();[m
+ 						new JanelaCluster(visualizador1.getGrafo(), visualizador1.getTabela(), nomeArquivo);[m

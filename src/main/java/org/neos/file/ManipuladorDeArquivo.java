@@ -51,6 +51,8 @@ public class ManipuladorDeArquivo {
 		} while(
 				!algoritmo.equals("#pMMDAC")
 				&& !algoritmo.equals("#min-max")
+				&& !algoritmo.equals("#PACH_SMD")
+				&& !algoritmo.equals("#pACHSMD")
 				&& !algoritmo.equals("#pACHCG")
 				&& !algoritmo.equals("#CCCP")
 				&& !algoritmo.equals("#centroid")
@@ -97,6 +99,8 @@ public class ManipuladorDeArquivo {
 		} while(
 				!algoritmo.equals("#pMMDAC")
 				&& !algoritmo.equals("#min-max")
+				&& !algoritmo.equals("#PACH_SMD")
+				&& !algoritmo.equals("#pACHSMD")
 				&& !algoritmo.equals("#pACHCG")
 				&& !algoritmo.equals("#CCCP")
 				&& !algoritmo.equals("#centroid")

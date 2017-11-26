@@ -271,8 +271,8 @@ public class JanelaPrincipal extends JFrame {
 					switch (dataset.getAlgoritmo()) {
 					case "#pMMDAC":
 					case "#min-max":
-					case "PACH_SMD":
-					case "pACH_SMD":
+					case "#PACH_SMD":	
+					case "#pACHSMD":
 						VisualizadorDeCluster visualizador1 = new VisualizadorDeClusterMinMax(dataset);
 						visualizador1.templateVisualizarCluster();
 						new JanelaCluster(visualizador1.getGrafo(), visualizador1.getTabela(), nomeArquivo);

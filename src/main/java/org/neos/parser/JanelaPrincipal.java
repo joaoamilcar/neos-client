@@ -350,7 +350,7 @@ public class JanelaPrincipal extends JFrame {
         sobreAcao.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {  
         		String titulo = "About NEOS Client",
-        				textoPadrao = "Released on November 18th, 2017.",
+        				textoPadrao = "Released on November 26th, 2017.",
         				versaoJgraphx = "   - jgraphx version \"3.4.1.3\".",
         				versaoNeos = "   - neos version 5 (Madison).";
         				

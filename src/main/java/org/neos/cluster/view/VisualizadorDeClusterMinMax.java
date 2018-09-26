@@ -18,13 +18,27 @@ public class VisualizadorDeClusterMinMax extends VisualizadorDeCluster {
 	@SuppressWarnings("unchecked")
 	@Override
 	protected void visualizarPontos(Cluster cluster) {
-		String corHex = getCoresHexPosicao(cluster.getIdCluster() % getCoresHex().length);
+		String corHex = "";
+		
+		
+		if(cluster.getIdCluster() == 46) {
+			corHex = getCoresHexPosicao(cluster.getIdCluster() % getCoresHex().length);
+			
+		} else {
+			corHex = "#95003A";
+		}
 		
 		for (Ponto pontoCluster : cluster.getPontos()) {
+			Object grupo = null;
+			
+			if(cluster.getIdCluster() != 46) {
+				grupo = pontoCluster.getGrupo();
+			}
+			
 			Object pontoGrafo = grafo.insertVertex(
 					parent,
 					null,
-					null,//pontoCluster.getId() + ":G" + pontoCluster.getGrupo(),
+					grupo,//pontoCluster.getId() + ":G" + pontoCluster.getGrupo(),
 					pontoCluster.getCoordX(),
 					pontoCluster.getCoordY(),
 					25, //0.5, 
@@ -33,9 +47,11 @@ public class VisualizadorDeClusterMinMax extends VisualizadorDeCluster {
 							+ mxConstants.STYLE_FILLCOLOR + "=" + corHex + ";"
 							+ mxConstants.STYLE_STROKECOLOR + "=" + corHex + ";"
 							+ mxConstants.STYLE_STROKEWIDTH + "=" + 0 + ";"
-							+ mxConstants.STYLE_FONTCOLOR + "=" + mxUtils.getHexColorString(Color.black) + ";"
-							+ mxConstants.STYLE_FONTSIZE + "=" + 1 + ";"
-							+ mxConstants.STYLE_FONTSTYLE + "=" + mxConstants.FONT_BOLD);			
+							+ mxConstants.STYLE_FONTCOLOR + "=" + "#FFFFFF" + ";"
+							+ mxConstants.STYLE_FONTSIZE + "=" + 15 + ";"
+							+ mxConstants.STYLE_FONTSTYLE + "=" + mxConstants.FONT_BOLD);
+			
+			
 			//"strokeColor=lightgray;whiteSpace=wrap;fillColor=lightgray"
 			//shape=ellipse;perimeter=ellipsePerimeter;whiteSpace=wrap;fillColor=lightgray	//perimeter=100
 			

@@ -12,6 +12,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.neos.client.NeosJobXml;
 import org.neos.exception.ExcecaoNeosXML;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -38,6 +39,9 @@ public class AnalisadorTemplateXML { // http://stackoverflow.com/questions/66048
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		Element elementoEmail = documento.createElement("email");
+		documento.getElementsByTagName("document").item(0).appendChild(elementoEmail);
 		
 		NodeList lista = documento.getElementsByTagName("document").item(0).getChildNodes();
 		ComponenteFactory componenteFactory = new ComponenteFactory();

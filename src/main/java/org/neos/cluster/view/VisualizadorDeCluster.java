@@ -109,7 +109,7 @@ public abstract class VisualizadorDeCluster { // atributos para a criação dos 
 				dadosTabela[contadorVertices][0] = rotulo[0];
 				dadosTabela[contadorVertices][1] = celula.getGeometry().getX();
 				dadosTabela[contadorVertices][2] = celula.getGeometry().getY();
-				dadosTabela[contadorVertices][3] = rotulo[1];
+				//dadosTabela[contadorVertices][3] = rotulo[1];
 				dadosTabela[contadorVertices][4] = getCorRgbCelula(celula);
 				
 				contadorVertices++;

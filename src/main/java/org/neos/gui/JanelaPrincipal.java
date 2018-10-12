@@ -1,4 +1,4 @@
-package org.neos.parser;
+package org.neos.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -29,11 +29,6 @@ import org.neos.cluster.view.VisualizadorDeClusterMinMax;
 import org.neos.cluster.view.VisualizadorDeClusterPMedian;
 import org.neos.cluster.view.VisualizadorDeClusterPadrao;
 import org.neos.file.ManipuladorDeArquivo;
-import org.neos.gui.JanelaAjuda;
-import org.neos.gui.JanelaCluster;
-import org.neos.gui.JanelaConfiguracaoServidor;
-import org.neos.gui.JanelaJobSenha;
-import org.neos.gui.JanelaNovaJob;
 import org.neos.server.Servidor;
 
 @SuppressWarnings("serial")

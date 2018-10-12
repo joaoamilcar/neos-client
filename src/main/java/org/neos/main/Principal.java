@@ -2,7 +2,7 @@ package org.neos.main;
 
 import javax.swing.UIManager;
 
-import org.neos.parser.JanelaPrincipal;
+import org.neos.gui.JanelaPrincipal;
 
 public class Principal {
 	public static void main(String[] args) {
